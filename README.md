@@ -2,6 +2,34 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
+## Tutorial
+### Setup UI
+0. `npm install --global @ng/cli` (or `yarn add global @ng/cli`, if available)
+0. `ng new hateoas-navigator-tutorial`
+0. `cd hateoas-navigator-tutorial`
+0. `ng add hateoas-navigator`
+0. `ng add document-components`
+0. Add the "proxyConfig" line to _angular.json_
+0. Copy proxy.conf.json
+
+### Setup backend
+0. Go to https://start.spring.io
+0. Choose the dependencies "Rest Repositories", "JPA" and "H2" (and "Lombok" if you wish)
+0. Generate Project, unzip the downloaded zip
+
+### Add some entities to the backend
+Create an entity, example: Person. Create a repository, example: PersonRepository.
+Then start the backend: `./mvnw spring-boot:run`
+
+### Integrate hateoas-navigator
+0. Start the UI `ng serve`
+0. In _app.module.ts_ add the two imports
+```
+HalNavigatorModule.forRoot(undefined),
+DocumentComponentsModule
+```
+0. ...
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

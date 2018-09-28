@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {HalNavigatorModule} from 'hateoas-navigator';
-import {DocumentComponentsModule} from 'document-components';
+import {DocumentComponentsModule, GenericRoutes} from 'document-components';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import {DocumentComponentsModule} from 'document-components';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HalNavigatorModule.forRoot(undefined),
-    DocumentComponentsModule
+    DocumentComponentsModule,
+    RouterModule.forRoot(GenericRoutes.get())
   ],
   providers: [],
   bootstrap: [AppComponent]

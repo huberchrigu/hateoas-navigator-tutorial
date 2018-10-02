@@ -65,6 +65,9 @@ RouterModule.forRoot(GenericRoutes.get())
 
 Now you can navigate to the previously created resource, create, list, edit and delete items.
 
+### Add excerpts
+If you have an association from one resource to another, define an excerpt projection to see the associated resource's excerpt.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

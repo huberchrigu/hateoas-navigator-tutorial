@@ -11,12 +11,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 0. `npm install --global @ng/cli` (or `yarn add global @ng/cli`, if available)
 0. `ng new hateoas-navigator-tutorial`
 0. `cd hateoas-navigator-tutorial`
-0. `ng add hateoas-navigator`
-0. `ng add document-components`
-0. `ng add @angular/material`
-0. `ng add rxjs-compat`
-0. `ng add md2`
-0. `ng add moment`
+0. `yarn add hateoas-navigator document-components`
+0. `yarn add @angular/material @angular/cdk rxjs-compat md2 moment`
 0. Add the "proxyConfig" line to [_angular.json_](./angular.json)
 0. Copy [proxy.conf.json](./src/proxy.conf.json)
 

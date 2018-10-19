@@ -17,15 +17,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 0. `ng add rxjs-compat`
 0. `ng add md2`
 0. `ng add moment`
-0. Add the "proxyConfig" line to _angular.json_
-0. Copy proxy.conf.json
+0. Add the "proxyConfig" line to [_angular.json_](./angular.json)
+0. Copy [proxy.conf.json](./src/proxy.conf.json)
 
 ### Setup backend
 0. Go to https://start.spring.io
 0. For now, choose version 2.0.3 (later versions are not supported yet)
-0. Choose the dependencies "Rest Repositories", "JPA" and "H2" (and "Lombok" if you wish)
+0. Choose the dependencies "Rest Repositories", "JPA" and "H2" ("Devtools" and "Lombok" if you wish)
 0. Generate Project, unzip the downloaded zip
-0. Add patched versions for Spring Rest to the _pom.xml_:
+0. Add patched versions for Spring Rest to the [pom.xml](./backend/pom.xml):
 ```
 <dependencyManagement>
     <dependencies>
@@ -44,18 +44,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```
 
 ### Add some entities to the backend
-0. Create an entity, example: Person. Create a repository, example: PersonRepository.
+0. Create an entity, example: [Person](./backend/src/main/java/com/example/hateoas/hateoastutorial/Person.java). 
+   Create a repository, example: [PersonRepository](./backend/src/main/java/com/example/hateoas/hateoastutorial/PersonRepository.java).
 0. Then start the backend: `./mvnw spring-boot:run`
 
 ### Integrate hateoas-navigator
 0. Start the UI `ng serve`
-0. In _app.module.ts_ add the three imports
+0. In [app.module.ts](./src/app/app.module.ts) add the three imports
 ```
 HalNavigatorModule.forRoot(undefined),
 DocumentComponentsModule,
 RouterModule.forRoot(GenericRoutes.get())
 ```
-0. Add the default navigation by replacing app.component.html with
+0. Due to an angular issue, replace `GenericRoutes.get()` by the array it returns
+0. Add the default navigation by replacing [app.component.html](./src/app/app.component.html) with
 ```
 <app-navigation></app-navigation>
 <div id="cmp-content" class="mat-elevation-z2">
@@ -67,6 +69,7 @@ Now you can navigate to the previously created resource, create, list, edit and 
 
 ### Add excerpts
 If you have an association from one resource to another, define an excerpt projection to see the associated resource's excerpt.
+Example: [PersonExcerpt](./backend/src/main/java/com/example/hateoas/hateoastutorial/PersonExcerpt.java)
 
 ## Development server
 

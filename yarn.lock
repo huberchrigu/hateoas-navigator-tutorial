@@ -2735,9 +2735,9 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.0"
 
-hateoas-navigator@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/hateoas-navigator/-/hateoas-navigator-0.0.1.tgz#bff19d058e1bde23bb7f4b767dbd7b8139be08b6"
+hateoas-navigator@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/hateoas-navigator/-/hateoas-navigator-0.0.2.tgz#a16270aaa48186e862f15185fbec1133254ce23b"
   dependencies:
     tslib "^1.9.0"
 

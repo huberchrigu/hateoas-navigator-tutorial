@@ -10,11 +10,11 @@ import {
   RouteParams
 } from 'hateoas-navigator';
 import {
-  DocumentComponentsModule,
+  ResourceComponentsModule,
   ResourceFormComponent,
   ResourceItemComponent,
   ResourceListComponent
-} from 'document-components';
+} from 'resource-components';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 
@@ -26,7 +26,7 @@ import {RouterModule} from '@angular/router';
     BrowserModule,
     BrowserAnimationsModule,
     HalNavigatorModule.forRoot(undefined),
-    DocumentComponentsModule,
+    ResourceComponentsModule,
     RouterModule.forRoot([
       {
         path: ':' + RouteParams.RESOURCE_PARAM + '/new',

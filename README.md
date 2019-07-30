@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 0. `ng new hateoas-navigator-tutorial`
 0. `cd hateoas-navigator-tutorial`
 0. `ng add @angular/material`
-0. `yarn add rxjs-compat md2 moment hateoas-navigator document-components`
+0. `yarn add rxjs-compat md2 moment hateoas-navigator resource-components`
 0. Add the "proxyConfig" line to [_angular.json_](./angular.json)
 0. Copy [proxy.conf.json](./src/proxy.conf.json)
 
@@ -55,7 +55,7 @@ RouterModule.forRoot(GenericRoutes.get())
 0. Due to an angular issue, replace `GenericRoutes.get()` by the array it returns
 0. Add the default navigation by replacing [app.component.html](./src/app/app.component.html) with
 ```
-<app-navigation></app-navigation>
+<lib-navigation></lib-navigation>
 <div id="cmp-content" class="mat-elevation-z2">
   <router-outlet></router-outlet>
 </div>

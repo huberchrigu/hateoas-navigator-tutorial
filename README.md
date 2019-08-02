@@ -9,43 +9,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Tutorial
 ### Setup UI
 0. `yarn add global @angular/cli`
-0. `ng new hateoas-navigator-tutorial`
+0. `ng new hateoas-navigator-tutorial --routing=true`
 0. `cd hateoas-navigator-tutorial`
 0. `ng add @angular/material`
-0. `yarn add rxjs-compat md2 moment hateoas-navigator resource-components`
+0. `ng add resource-components`
+
+#### What does ng add resource-components do?
+Instead of running resource-components' ng-add schematic, you could also apply the following manually:
+0. `yarn add moment hateoas-navigator resource-components`
 0. Add the "proxyConfig" line to [_angular.json_](./angular.json)
 0. Copy [proxy.conf.json](./src/proxy.conf.json)
-
-### Setup backend
-0. Go to https://start.spring.io
-0. For now, choose version 2.0.3 (later versions are not supported yet)
-0. Choose the dependencies "Rest Repositories", "JPA" and "H2" ("Devtools" and "Lombok" if you wish)
-0. Generate Project, unzip the downloaded zip
-0. Add patched versions for Spring Rest to the [pom.xml](./backend/pom.xml):
-```
-<dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.data</groupId>
-        <artifactId>spring-data-rest-webmvc</artifactId>
-        <version>3.2.0.BUILD-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.data</groupId>
-        <artifactId>spring-data-rest-core</artifactId>
-        <version>3.2.0.BUILD-SNAPSHOT</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-```
-
-### Add some entities to the backend
-0. Create an entity, example: [Person](./backend/src/main/java/com/example/hateoas/hateoastutorial/Person.java). 
-   Create a repository, example: [PersonRepository](./backend/src/main/java/com/example/hateoas/hateoastutorial/PersonRepository.java).
-0. Then start the backend: `./mvnw spring-boot:run`
-
-### Integrate hateoas-navigator
-0. Start the UI `ng serve`
 0. In [app.module.ts](./src/app/app.module.ts) add the three imports
 ```
 HalNavigatorModule.forRoot(undefined),
@@ -60,6 +33,31 @@ RouterModule.forRoot(GenericRoutes.get())
   <router-outlet></router-outlet>
 </div>
 ```
+
+### Setup backend
+0. Go to https://start.spring.io
+0. Choose the dependencies "Rest Repositories", "JPA" and "H2" ("Devtools" and "Lombok" if you wish)
+0. Generate Project, unzip the downloaded zip
+0. *Optional*: Add the patched version of Spring Data Rest to the [pom.xml](./backend/pom.xml):
+```
+<dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-rest-webmvc</artifactId>
+        <version>3.1.9.RELEASE-FORK</version><!-- Fixes JsonSchema issue -->
+      </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+### Add some entities to the backend
+0. Create an entity, example: [Person](./backend/src/main/java/com/example/hateoas/hateoastutorial/Person.java). 
+   Create a repository, example: [PersonRepository](./backend/src/main/java/com/example/hateoas/hateoastutorial/PersonRepository.java).
+0. Then start the backend: `./mvnw spring-boot:run`
+
+### Integrate hateoas-navigator
+0. Start the UI `ng serve`
 
 Now you can navigate to the previously created resource, create, list, edit and delete items.
 

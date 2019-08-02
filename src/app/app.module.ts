@@ -1,22 +1,11 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {
-  CollectionResolverService,
-  HalNavigatorModule,
-  ResourceDescriptorResolverService,
-  ResourceObjectResolverService,
-  RouteParams
-} from 'hateoas-navigator';
-import {
-  ResourceComponentsModule,
-  ResourceFormComponent,
-  ResourceItemComponent,
-  ResourceListComponent
-} from 'resource-components';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RouterModule} from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HalNavigatorModule } from 'hateoas-navigator';
+import { ResourceComponentsModule } from 'resource-components';
 
 @NgModule({
   declarations: [
@@ -24,42 +13,12 @@ import {RouterModule} from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     HalNavigatorModule.forRoot(undefined),
-    ResourceComponentsModule,
-    RouterModule.forRoot([
-      {
-        path: ':' + RouteParams.RESOURCE_PARAM + '/new',
-        component: ResourceFormComponent,
-        resolve: {
-          resourceDescriptor: ResourceDescriptorResolverService
-        }
-      },
-      {
-        path: `:${RouteParams.RESOURCE_PARAM}/:${RouteParams.ID_PARAM}`,
-        component: ResourceItemComponent,
-        resolve: {
-          resourceObject: ResourceObjectResolverService
-        }
-      },
-      {
-        path: `:${RouteParams.RESOURCE_PARAM}/:${RouteParams.ID_PARAM}/edit`,
-        component: ResourceFormComponent,
-        resolve: {
-          resourceObject: ResourceObjectResolverService
-        }
-      },
-      {
-        path: ':' + RouteParams.RESOURCE_PARAM,
-        component: ResourceListComponent,
-        resolve: {
-          collectionAdapter: CollectionResolverService
-        }
-      }
-    ]) // copied from GenericRoutes.get()
+    ResourceComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

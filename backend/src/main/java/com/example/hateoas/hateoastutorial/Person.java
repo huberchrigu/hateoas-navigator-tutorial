@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -35,6 +32,9 @@ public class Person {
 
   @ManyToMany
   private Set<Person> knows;
+
+  @Version
+  private Long version;
 }
 
 enum Gender {MALE, FEMALE}

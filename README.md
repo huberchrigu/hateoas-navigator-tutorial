@@ -53,7 +53,8 @@ RouterModule.forRoot(GenericRoutes.get())
 
 ### Add some entities to the backend
 0. Create an entity, example: [Person](./backend/src/main/java/com/example/hateoas/hateoastutorial/Person.java). 
-   Create a repository, example: [PersonRepository](./backend/src/main/java/com/example/hateoas/hateoastutorial/PersonRepository.java).
+   _Note_: Currently HATEOAS Navigator requires a `@Version` in every root entity.
+0. Create a repository, example: [PersonRepository](./backend/src/main/java/com/example/hateoas/hateoastutorial/PersonRepository.java).
 0. Then start the backend: `./mvnw spring-boot:run`
 
 ### Integrate hateoas-navigator

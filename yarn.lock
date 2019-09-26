@@ -3073,10 +3073,10 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-hateoas-navigator@~0.1.0-RC2:
-  version "0.1.0-RC2"
-  resolved "https://registry.yarnpkg.com/hateoas-navigator/-/hateoas-navigator-0.1.0-RC2.tgz#ef767702b59423ace8616bc20b64ec38b72e6e8d"
-  integrity sha512-VGJrKp7rJo6TxVbyUdNQ1xTzire5tO5O9aPLJXKJIPbEkdo885lFr+wdEk0KFjmyKIe+KIKrJXJKwoSZyBA5kA==
+hateoas-navigator@~0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/hateoas-navigator/-/hateoas-navigator-0.1.0.tgz#4747fa78cb6c78468f5dc8046ad76c423ef4cdba"
+  integrity sha512-5WpvsuxokA1jepWuMc9fLFEQpS3DRTiomP2BvQMr81quM/ld5RYzxO0Mbxv2OUmv0hkZnZYXOFpZaLKYiFg0Vw==
   dependencies:
     tslib "^1.9.0"
 
@@ -5555,10 +5555,10 @@ resolve@^1.1.7, resolve@^1.10.0, resolve@^1.3.2:
   dependencies:
     path-parse "^1.0.6"
 
-resource-components@^0.1.0-RC2:
-  version "0.1.0-RC2"
-  resolved "https://registry.yarnpkg.com/resource-components/-/resource-components-0.1.0-RC2.tgz#bcaebb1f04225ce5cd2f143262f659ce27bbabb5"
-  integrity sha512-0M/ubdF2RyaVbmin7ekSUQFEamc3faHoaOTho2TB5qRxS2PV84fmB1jqFXCnvX85fm5gDsXapo2GzweaLWfcJQ==
+resource-components@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/resource-components/-/resource-components-0.1.0.tgz#32b9321a008e2001f39db965e306c5efd0c45d42"
+  integrity sha512-Q7/0+UXuJ3fZKBhkp+GuxW5kmzXMjTww9pQizYtorYKWH05aAQ4C3SNgtd0BSW8OZAAsDr76NfScxonts7WAXw==
   dependencies:
     tslib "^1.9.0"
 
